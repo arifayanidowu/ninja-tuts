@@ -34,7 +34,6 @@ export default function AddBook() {
   const [state, setState] = useState(INIT_STATE);
   const { loading, error, data } = useQuery(GET_AUTHORS);
   const [addBook] = useMutation(ADD_BOOK);
-  if (error) return <p>Error...</p>;
 
   const handleChange = e => {
     e.persist();
@@ -53,6 +52,8 @@ export default function AddBook() {
     });
     setState(INIT_STATE);
   };
+
+  if (error) return <p>Error...</p>;
 
   return (
     <Paper component="form" className={classes.root} onSubmit={handleSubmit}>
@@ -93,7 +94,7 @@ export default function AddBook() {
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          {loading ? (
+          {loading || !data ? (
             <MenuItem>Loading...</MenuItem>
           ) : (
             data.authors.map(({ name, age, id }) => (

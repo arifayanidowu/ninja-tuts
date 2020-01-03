@@ -44,7 +44,7 @@ export default function BookLists() {
           Ninja's reading list
         </Typography>
         <List className={classes.list}>
-          {loading ? (
+          {loading || !data ? (
             <ListItem>
               <ListItemText primary="Loading..." />
             </ListItem>
