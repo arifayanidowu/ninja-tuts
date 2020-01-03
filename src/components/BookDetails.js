@@ -23,7 +23,7 @@ export default function BookDetails({ bookId }) {
       <Typography component="p" variant="subtitle1">
         Book details goes here
       </Typography>
-      {loading || !data ? (
+      {loading ? (
         <p>Loading...</p>
       ) : error ? (
         <h2>No Selected Book</h2>
