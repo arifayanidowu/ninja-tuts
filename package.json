@@ -24,10 +24,10 @@
     "react-scripts": "3.3.0"
   },
   "scripts": {
+    "start": "node server.js",
     "client": "react-scripts start",
     "build": "react-scripts build",
     "dev": "nodemon server",
-    "start": "node server.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
