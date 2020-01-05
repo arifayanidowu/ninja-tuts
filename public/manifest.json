@@ -3,7 +3,7 @@
   "short_name": "Ninja Tuts",
   "theme_color": "#6c5d56",
   "background_color": "#6c5d56",
-  "display": "browser",
+  "display": "standalone",
   "Scope": "/",
   "start_url": "/",
   "icons": [
