@@ -39,9 +39,9 @@ export default function Navbar({ onToggle }) {
             onClick={onToggle}
           >
             {theme.palette.type === "light" ? (
-              <Brightness7Icon />
-            ) : (
               <Brightness4Icon />
+            ) : (
+              <Brightness7Icon />
             )}
           </IconButton>
           <Typography variant="h6" className={classes.title}>

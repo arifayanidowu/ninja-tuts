@@ -12,7 +12,7 @@ import themeConfig from "./theme";
 import Layout from "./components/Layout";
 
 const client = new ApolloClient({
-  uri: "/graphql"
+  uri: "http://localhost:4000/graphql"
 });
 
 const useDarkMode = () => {

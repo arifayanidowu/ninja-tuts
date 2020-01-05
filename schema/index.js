@@ -65,7 +65,7 @@ const RootQuery = new GraphQLObjectType({
     books: {
       type: new GraphQLList(BookType),
       resolve(parent, args) {
-        return Book.find();
+        return Book.find().sort({ createdAt: "desc" });
       }
     },
     authors: {
@@ -108,6 +108,16 @@ const Mutation = new GraphQLObjectType({
           authorId: args.authorId
         });
         return book.save();
+      }
+    },
+    deleteBook: {
+      type: BookType,
+      args: {
+        id: { type: new GraphQLNonNull(GraphQLID) }
+      },
+      resolve(parent, args) {
+        let book = Book.findOneAndDelete({ _id: args.id });
+        return book;
       }
     }
   }
